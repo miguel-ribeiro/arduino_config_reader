@@ -10,47 +10,18 @@
 
 Config getDefaultConfig(){
 	Config c = {
-		99999,	// locationId;
-		2,		// deviceId; // 2 = Photon
-
-		"li1097-240.members.linode.com",	//serverAddress;
-		8301,	// serverPort;
-
-		8000,	// sampleRate;
-		128,	// dataSizeKB;
-		2, 		// numberBuffers;
-		24,		// sampleBufferSizeKB;
-		128,	// recordBufferSize;
-		1024, 	// TCPBufferSize;
-		11, 	// samplePin;	// A1
-
-		400,	// FFTfreq;
-		50,		// FFTbandwidth;
-		1,		// FFTWindowFunction	// 1
-
+		99999,			// locationId;
+		2,			// deviceId;
+		"servername.com",	// serverAddress;
+		8000,			// serverPort;
+		8000,			// sampleRate;
+		128,			// dataSizeKB;
+		2, 			// numberBuffers;
 	};
-		return c;
-	}
-	/*Config c = {
-		12345,	// locationId;
-		12345,		// deviceId; // 2 = Photon
-
-		"0987654",	//serverAddress;
-		12345,	// serverPort;
-
-		12345,	// sampleRate;
-		12345,	// dataSizeKB;
-		12345, 		// numberBuffers;
-		12345,		// sampleBufferSizeKB;
-		12345,	// recordBufferSize;
-		12345, 	// TCPBufferSize;
-		12345, 	// samplePin;	// A1
-
-		12345,	// FFTfreq;
-		12345,		// FFTbandwidth;
-		12345,		// FFTWindowFunction	// 1
-	};*/
-
+	
+	return c;
+}
+	
 String readLine(SdFile* fd){
 	String line = "";
 	char lastChar = '\n';
@@ -73,25 +44,16 @@ String readLine(SdFile* fd){
 }
 
 bool assignConfig(char* paramName, String val, Config &config){
+	if(stricmp(paramName, "locationId") == 0) 	{ config.locationId 	= atoi(val); 	return true; }
+	if(stricmp(paramName, "deviceId") == 0) 	{ config.deviceId 	= atoi(val); 	return true; }
 
-	if(stricmp(paramName, "locationId") == 0) 				{ config.locationId 					= atoi(val); 	return true; }
-	if(stricmp(paramName, "deviceId") == 0) 					{ config.deviceId 						= atoi(val); 	return true; }
+	if(stricmp(paramName, "serverAddress") == 0) 	{ config.serverAddress	= val;		return true; }
+	if(stricmp(paramName, "serverPort") == 0) 	{ config.serverPort 	= atoi(val); 	return true; }
 
-	if(stricmp(paramName, "serverAddress") == 0) 			{ config.serverAddress	 		= val;				return true; }
-	if(stricmp(paramName, "serverPort") == 0) 				{ config.serverPort 				= atoi(val); 	return true; }
-
-	if(stricmp(paramName, "sampleRate") == 0) 				{ config.sampleRate 				= atoi(val); 	return true; }
-	if(stricmp(paramName, "dataSize") == 0) 					{ config.dataSize 					= atoi(val); 	return true; }
-	if(stricmp(paramName, "numberBuffers") == 0) 			{ config.numberBuffers 			= atoi(val); 	return true; }
-	if(stricmp(paramName, "sampleBufferSize") == 0)		{ config.sampleBufferSize 	= atoi(val); 	return true; }
-	if(stricmp(paramName, "recordBufferSize") == 0)		{ config.recordBufferSize 	= atoi(val); 	return true; }
-	if(stricmp(paramName, "TCPBufferSize") == 0) 			{ config.TCPBufferSize 			= atoi(val); 	return true; }
-	if(stricmp(paramName, "samplePin") == 0) 					{ config.samplePin 					= atoi(val); 	return true; }
-
-	if(stricmp(paramName, "FFTfreq") == 0) 						{ config.FFTfreq 						= atoi(val); 	return true; }
-	if(stricmp(paramName, "FFTbandwidth") == 0) 			{ config.FFTbandwidth 			= atoi(val); 	return true; }
-	if(stricmp(paramName, "FFTWindowFunction") == 0) 	{ config.FFTWindowFunction	= atoi(val); 	return true; }
-
+	if(stricmp(paramName, "sampleRate") == 0) 	{ config.sampleRate 	= atoi(val); 	return true; }
+	if(stricmp(paramName, "dataSize") == 0) 	{ config.dataSize 	= atoi(val); 	return true; }
+	if(stricmp(paramName, "numberBuffers") == 0) 	{ config.numberBuffers 	= atoi(val); 	return true; }
+	
 	return false;
 }
 
