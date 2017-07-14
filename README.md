@@ -11,4 +11,11 @@ Useful to
 Uses the library SDFile from sparkfun shield https://github.com/sparkfun/Shifting_microSD/blob/master/Firmware/uSD_Editor/uSD_Editor.ino
 Although any other library will do, as long as it can read characters from a text file
 
-The usage is
+# Usage
+```
+Config CONFIG = getDefaultConfig();
+readSDConfig("configuration.txt", CONFIG);
+Serial.println(CONFIG.deviceId);
+```
+
+Has been tested in the Particle Photon
