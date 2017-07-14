@@ -11,6 +11,7 @@ Useful to
 Uses the library SDFile from sparkfun shield https://github.com/sparkfun/Shifting_microSD/blob/master/Firmware/uSD_Editor/uSD_Editor.ino
 Although any other library will do, as long as it can read characters from a text file
 
+Allows to have preset values, in case there is some error reading the SDcard or if the SDCard is not present
 
 # How to change parameters:
 1- change the struct Config (_config.h_) with the datatypes of your needs
