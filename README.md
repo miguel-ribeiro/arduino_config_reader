@@ -1,6 +1,6 @@
 # Arduino Config Reader
 
-Reads a configuration text file form an SDcard and stores the configuration values in a config struct that can be used throughout your program.
+Reads a configuration text file form an SDcard (FAT) and stores the configuration values in a config struct that can be used throughout your program.
 It is useful to pass parameters to the running software without having to reflash or recompile code, simply by changing some parameters in a text file.
 Useful to 
 - set device IDs on multiple devices running the same software
@@ -8,7 +8,7 @@ Useful to
 - definig servers address and ports to send data to
 - etc...
 
-Uses the library SDFile from sparkfun shield https://github.com/sparkfun/Shifting_microSD/blob/master/Firmware/uSD_Editor/uSD_Editor.ino
+Uses the library SDFat from sparkfun shield https://github.com/greiman/SdFat 
 Although any other library will do, as long as it can read characters from a text file
 
 Allows to have preset values, in case there is some error reading the SDcard or if the SDCard is not present
@@ -49,6 +49,10 @@ Parameter2=value2
 - No spaces can be used between the parameter name and the delimiter
 - String Parameters should be stored in plain text without quotes and assigned in the function assignConfig (_config.cpp_) similar to how the parameter **serverAddress** in the example is set.
 - Allows for blank lines
+
+# Final notes
+Can be adapted to other SDCard libraries that read single characters by changing the function **readLine** (_config.cpp_)
+Can be adapted to other file formats and the parsing of other values, such as bool or float in the function **assignConfig** (_config.cpp_)
 
 # Tested
 Has been tested in the Particle Photon
