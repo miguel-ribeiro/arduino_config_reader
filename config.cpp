@@ -32,9 +32,7 @@ String readLine(SdFile* fd){
 	}
 	// the first char found is already stored in lastChar variable from the previous loop
 	while(fd->available() && lastChar != '\n' && lastChar != '\r'){
-
-			line += lastChar;
-
+		line += lastChar;
 		lastChar = fd->read();
 	}
 	if(!fd->available() && lastChar != '\n' && lastChar != '\r' && lastChar != '\t' && lastChar != ' '){
