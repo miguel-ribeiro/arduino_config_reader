@@ -1,0 +1,9 @@
+locationId=99999
+deviceId=2
+
+serverAddress=li1097-240.members.linode.com
+serverPort=8301
+
+sampleRate=8000
+dataSizeKB=128
+numberBuffers=2
