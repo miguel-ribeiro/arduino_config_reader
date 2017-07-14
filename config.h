@@ -14,6 +14,7 @@ Config getDefaultConfig();
 void readSDConfig(const char*, Config&);
 String readLine(SdFile *);
 bool assignConfig(char*, String, Config&);
+void printConfig(Config&);
 
 
 // use as
