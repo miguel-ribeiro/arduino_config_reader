@@ -1,4 +1,4 @@
-# arduino_config_reader
+# Arduino Config Reader
 
 Reads a configuration text file form an SDcard and stores the configuration values in a config struct that can be used throughout your program.
 It is useful to pass parameters to the running software without having to reflash or recompile code, simply by changing some parameters in a text file.
@@ -43,8 +43,10 @@ Each parameter is as follows:
 Parameter=value
 ```
 
-- The delimitator '=' can be set in the begining of _config.cpp_ file in the DELIM define
+- The delimiter '=' can be set in the begining of _config.cpp_ file in the DELIM define
+- No spaces can be used between the parameter name and the delimiter
 - String Parameters should be stored in plain text without quotes and assigned in the function assignConfig (_config.cpp_) similar to how the parameter **serverAddress** in the example is set.
+- Allows for blank lines
 
-
+# Tested
 Has been tested in the Particle Photon
