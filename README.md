@@ -40,7 +40,8 @@ printConfig(CONFIG);
 The file is made of a parameter for each new line (either terminated with \r (winodws) or \n (unix)
 Each parameter is as follows:
 ```
-Parameter=value
+Parameter1=value1
+Parameter2=value2
 ```
 
 - The delimiter '=' can be set in the begining of _config.cpp_ file in the DELIM define
