@@ -89,3 +89,15 @@ void readSDConfig(const char *aFilename, Config &config){
 	}
 	fd.close();
 }
+
+
+// change Serial.println to the correspondent printing function in your environment
+void printConfig(Config& config){
+	Serial.println(config.locationId);
+	Serial.println(config.deviceId);
+	Serial.println(config.serverAddress);
+	Serial.println(config.serverPort);
+	Serial.println(config.sampleRate);
+	Serial.println(config.dataSize);
+	Serial.println(config.numberBuffers);
+}
