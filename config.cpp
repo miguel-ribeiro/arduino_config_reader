@@ -42,15 +42,16 @@ String readLine(SdFile* fd){
 }
 
 bool assignConfig(char* paramName, String val, Config &config){
-	if(stricmp(paramName, "locationId") == 0) 		{ config.locationId 	= atoi(val);
-	}else if(stricmp(paramName, "deviceId") == 0) 		{ config.deviceId 	= atoi(val);
+	if(stricmp(paramName, "locationId") == 0) 		{ config.locationId 	= atoi(val);	//string values
+	}else if(stricmp(paramName, "deviceId") == 0) 		{ config.deviceId 	= atoi(val);	//string values
 
-	}else if(stricmp(paramName, "serverAddress") == 0) 	{ config.serverAddress	= val;
-	}else if(stricmp(paramName, "serverPort") == 0) 	{ config.serverPort 	= atoi(val);
+	}else if(stricmp(paramName, "serverAddress") == 0) 	{ config.serverAddress	= val;		//int values
+	}else if(stricmp(paramName, "serverPort") == 0) 	{ config.serverPort 	= atoi(val);	//string values
 
-	}else if(stricmp(paramName, "sampleRate") == 0) 	{ config.sampleRate 	= atoi(val);
-	}else if(stricmp(paramName, "dataSize") == 0) 		{ config.dataSize 	= atoi(val); 	
-	}else if(stricmp(paramName, "numberBuffers") == 0) 	{ config.numberBuffers 	= atoi(val);
+	}else if(stricmp(paramName, "sampleRate") == 0) 	{ config.sampleRate 	= atoi(val);	//string values
+	}else if(stricmp(paramName, "dataSize") == 0) 		{ config.dataSize 	= atoi(val);	//string values 	
+	}else if(stricmp(paramName, "numberBuffers") == 0) 	{ config.numberBuffers 	= atoi(val);	//string values
+	}else  if(stricmp(paramName, "sendFile") == 0) 		{ config.sendFile	= ((stricmp(val, "true") == 0) || (stricmp(val, "1") == 0)) ? true : false;	// boolean values
 	}else {return false;}
 	return true;
 }
