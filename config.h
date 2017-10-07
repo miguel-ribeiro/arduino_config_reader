@@ -8,6 +8,8 @@ struct Config {
 	ushort sampleRate;
 	ushort dataSize;
 	ushort numberBuffers;
+	
+	boolean sendToServer;
 };
 
 Config getDefaultConfig();
