@@ -17,6 +17,7 @@ Config getDefaultConfig(){
 		8000,			// sampleRate;
 		128,			// dataSizeKB;
 		2, 			// numberBuffers;
+		true
 	};
 	
 	return c;
@@ -51,7 +52,7 @@ bool assignConfig(char* paramName, String val, Config &config){
 	}else if(stricmp(paramName, "sampleRate") == 0) 	{ config.sampleRate 	= atoi(val);	//string values
 	}else if(stricmp(paramName, "dataSize") == 0) 		{ config.dataSize 	= atoi(val);	//string values 	
 	}else if(stricmp(paramName, "numberBuffers") == 0) 	{ config.numberBuffers 	= atoi(val);	//string values
-	}else  if(stricmp(paramName, "sendFile") == 0) 		{ config.sendFile	= ((stricmp(val, "true") == 0) || (stricmp(val, "1") == 0)) ? true : false;	// boolean values
+	}else if(stricmp(paramName, "sendToServer") == 0) 	{ config.sendToServer	= ((stricmp(val, "true") == 0) || (stricmp(val, "1") == 0)) ? true : false;	// boolean values
 	}else {return false;}
 	return true;
 }
@@ -99,4 +100,5 @@ void printConfig(Config& config){
 	Serial.println(config.sampleRate);
 	Serial.println(config.dataSize);
 	Serial.println(config.numberBuffers);
+	Serial.println(config.sendToServer);
 }
