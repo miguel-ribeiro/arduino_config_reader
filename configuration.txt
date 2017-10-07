@@ -7,3 +7,5 @@ serverPort=8301
 sampleRate=8000
 dataSizeKB=128
 numberBuffers=2
+
+sendToServer=true
