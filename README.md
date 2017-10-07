@@ -47,7 +47,8 @@ Parameter2=value2
 
 - The delimiter '=' can be set in the begining of _config.cpp_ file in the DELIM define
 - No spaces can be used between the parameter name and the delimiter
-- String Parameters should be stored in plain text without quotes and assigned in the function assignConfig (_config.cpp_) similar to how the parameter **serverAddress** in the example is set.
+- All parameters should be stored in plain text without quotes and assigned in the function assignConfig (_config.cpp_) similar to how the parameter **serverAddress** in the example is set.
+- Boolean values should have a value of true or false or 1 or 0 (not case sensitive)
 - Allows for blank lines
 
 # Final notes
